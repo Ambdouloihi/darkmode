@@ -9,10 +9,10 @@ function setup() {
     var h = window.innerHeight;
     createCanvas(w, h, WEBGL);
 
-    img = createImg( tabImg[i], '');
+    img = createImg(tabImg[i], '');
     img.position(width / 2, 0);
     img.mousePressed(changeIMG);
-    
+
     imgtxt = createImg('text.png', 'text');
     imgtxt.position(0, 0);
 }
@@ -30,4 +30,16 @@ function changeIMG() {
     i++;
     i = i % 3;
     img.elt.src = tabImg[i];
+    
+    let Xmin = width/8;
+    let Xmax = width/2;
+    
+    let x= Math.floor(Math.random() * (Xmax - Xmin)) + Xmin;
+    
+    let Ymin = height/8;
+    let Ymax = height/2;
+    
+    let y= Math.floor(Math.random() * (Ymax - Ymin)) + Ymin;
+    
+    img.position(x, y);
 }
